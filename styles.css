@@ -1,0 +1,113 @@
+/* layout */
+body {
+  font-family: system-ui, sans-serif;
+  /*Purpose of system-ui: It allows web applications to adopt the visual style of the user's operating system*/
+  background-color: #b2c9f7;
+  margin: 0;
+  padding: 2rem; /*1rem will be equal to 16px.*/
+  display: flex;
+  /*Layout Control: Flexbox provides a set of properties that can be applied to both the flex container and the flex items
+    to control their arrangement. 
+    These properties include:
+    flex-direction: Determines the main axis (row or column) and the direction of item placement.
+    justify-content: Aligns items along the main axis, controlling how space is distributed between or around them.
+    align-items: Aligns items along the cross axis (perpendicular to the main axis).
+    flex-wrap: Controls whether flex items wrap onto multiple lines if they exceed the container's width.*/
+  justify-content: center;
+}
+
+
+.container {
+  max-width: 700px;
+  width: 100%;
+}
+
+/* Form card */
+.card {
+  background-color: #bb17e0;
+  border-radius: 8px; 
+  padding: 1rem;
+  margin-bottom: 1rem; /* space below each card */
+  box-shadow: 0 3px 10px #1d1c1c14;
+}
+
+/* Each input field container  */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem; /*0.75rem=12p and is the space between fields */
+}
+
+label {
+  display: block; /*force label above input*/
+  font-weight: bold; /*makes text bold*/
+  margin-bottom: 0.25rem; /*0.25 rem = 4px*/
+}
+/* Input and Text area*/
+
+input[type="text"],
+textarea {
+  padding: 0.5rem; /* space inside input */
+  border: 1px solid #51a48c;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #b1fce5;
+  color: #000000;
+}
+
+
+/* --------------------------
+   Buttons
+--------------------------- */
+
+button {
+  padding: 0.6rem 1rem; /* vertical and horizontal space inside button */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer; /* pointer on hover */
+  font-weight: bold;
+}
+
+/* primary and cancel */
+#submit-btn {
+  background-color: #2b7dfa;
+  color: #ffffff;
+}
+#cancel-edit {
+  background-color: #cc0000; /* red for cancel */
+  color: #000000;
+}
+
+.hidden { display: none; } /* Hidden class to hide elements */
+
+
+/* post card */
+.post {
+  border: 1px solid #e3e6ee;
+  border-radius: 6px;
+  padding: 0.8rem;  /* space inside post */
+  margin-bottom: 0.7rem; /* space below each post */
+  background-color: #ffffff;
+}
+
+/* Post title */
+.post h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+
+  /* Post content */
+.post p {
+  margin: 0 0 0.5rem 0;
+}
+
+/* Buttons inside post  */
+.post .controls button {
+  display: inline-block;
+  margin-right: 8px; /* spacing between edit/delete buttons */
+ } 
+
+
+.btn-edit { color: #2b7dfa; border-color: #2b7dfa; }
+.btn-delete { color: #d9534f; border-color: #d9534f; }
+}

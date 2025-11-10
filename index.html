@@ -1,74 +1,82 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- The <meta> tag declares document information -->
+  <!-- The <meta> tag declares document information -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <!-- The <title> tag names the page in browser tab -->
   <title>Simple Personal Blog</title>
   <!-- The <link> tag connects this HTML file to an external CSS file -->
   <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
-     <!--
-      The <div> below is a "container" that groups everything on the page.--->
+  <!--
+    The <div> below is a "container" that groups everything on the page.
+    This helps structure the layout and makes it easier to style.
+    Lesson 2: HTML structure and semantic elements
+  -->
   <div class="container">
-<!-- Page header: uses a heading element -->
+    <!-- Page header: uses a heading element -->
     <h1>My Personal Blog</h1>
 
-    <!-- Form  The <form> element holds input fields and a submit button.
-        Each input has an associated <label> to describe it. -->
-
+    <!-- Form Section -->
     <section class="card">
       <h2 id="form-title">Create a New Post</h2>
-         <!-- "id" attribute lets JavaScript find this form later -->
-      <form id="post-form" novalidate>
-        <!-- novalidate: Disables browser validation: When novalidate is present on a <form> tag, 
-            the browser will not perform its default validation checks -->
+      <!-- "id" attribute lets JavaScript find this form later -->
+      <form id="postForm" novalidate>
+        <!-- novalidate: disables browser validation
+             Lesson 3: Forms and user input
+        -->
+
+        <!-- Title Field -->
         <div class="field">
           <label for="title">Title</label>
-           <!--<input> is a single-line text box.
-              type="text" means plain text input.
-              The "id" and "name" identify it for -->
+          <!-- <input> is a single-line text box.
+               type="text" means plain text input.
+               The "id" and "name" identify it for JS.
+          -->
           <input id="title" type="text" name="title">
-          <span id="title-error" class="error" aria-live="polite"></span>
-          <!--<span> is used to display small text or inline messages.
-              We'll use it to show validation errors in red.
-            -->
+          <span id="titleError" class="error" aria-live="polite"></span>
+          <!-- <span> is used to display small text or inline messages.
+               Use  it to show validation errors in red.
+               Lesson 3: User feedback
+          -->
         </div>
-                <!-- Content field -->
+
+        <!-- Content Field -->
         <div class="field">
           <label for="content">Content</label>
+          <!-- <textarea> lets users type multi-line text. rows="6" controls height. -->
           <textarea id="content" name="content" rows="6"></textarea>
-          <span id="content-error" class="error" aria-live="polite"></span>
+          <span id="contentError" class="error" aria-live="polite"></span>
         </div>
-            <!--<textarea> lets users type multi-line text. rows="6" controls height.
-              required enforces validation
-              Buttons area  -->
+
+        <!-- Buttons -->
         <div class="actions">
           <button id="submit-btn" type="submit">Add Post</button>
-          <!--type="submit" sends form data when clicked.
-              The button text tells the user what it does.-->
+          <!-- type="submit" sends form data when clicked. -->
           <button id="cancel-edit" type="button" class="hidden">Cancel Edit</button>
           <!-- This "Cancel Edit" button will only show when editing a post.
-              The 'hidden' class hides it by default
+               The 'hidden' class hides it by default
           -->
         </div>
       </form>
     </section>
 
-    <!-- Posts list -->
+    <!-- Posts List Section -->
     <section class="card">
       <h2>Posts</h2>
-      <div id="posts-container" aria-live="polite"></div>
+      <div id="posts" aria-live="polite"></div>
       <p id="no-posts" class="muted">No posts yet — create one above!</p>
-      <!--<p> with class "muted" shows a message when
-          there are no posts yet. JavaScript will hide it once posts appear.-->
+      <!-- <p> with class "muted" shows a message when
+           there are no posts yet. JavaScript will hide it once posts appear.
+           Lesson 5: DOM updates
+      -->
     </section>
-  </main>
-<!-- The <script> tag links to your JavaScript file.
-      Lesson 5: Event Listeners, Functions, Local Storage-->
+  </div>
+
+  <!-- Link to JavaScript file -->
   <script src="script.js"></script>
+ 
 </body>
 </html>

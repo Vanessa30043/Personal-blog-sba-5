@@ -10,6 +10,9 @@ body {
   margin: 0;
   padding: 2rem; /* 1rem = 16px */
   display: block; /* simple block layout */
+  background-image: url('blogbackground.jpeg');
+  background-size: cover;
+  background-position: center;
 }
 
 .container {

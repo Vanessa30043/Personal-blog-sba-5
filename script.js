@@ -23,15 +23,11 @@ const cancelEditBtn = document.getElementById('cancel-edit'); // cancel editing 
    editingId: null if creating a new post, holds post id when editing
    This covers Lesson 3: Variables and Data Types
 */
-let posts = []; 
-let editingId = null;
+let posts = []; // array to store posts
+let editingId = null; // null when adding new post, set to post id when editing
 
-/* --------------------------
-    Helper Functions
-   --------------------------
-   Simple reusable functions to make code cleaner and readable.
-   Lesson 4: Functions and Reuse
-*/
+
+   
 
 /* generateId()
    Creates a simple unique identifier using current time and a random number.
@@ -72,7 +68,7 @@ function resetForm() {
    Covers Lesson 3: Conditional logic and validation
 */
 function validateForm(title, content) {
-  clearErrors(); // remove previous messages
+  clearErrors(); // remove previous/old  messages
   let valid = true; // assume valid until proven otherwise
 
   //check if the title input is empty or only spaces
@@ -120,23 +116,52 @@ function renderPosts() {
   for (let i = 0; i < posts.length; i++) {
     const post = posts[i];
 
-    // container div for each post
-    const postDiv = document.createElement('div'); 
-    postDiv.classList.add('post'); // add CSS class for styling
-    postDiv.setAttribute('data-id', post.id); // store post ID for JS actions
+    //posts[i]: accesses each item in the array by its index.
+    //const post : is just a temporary variable for the current item in this iteration.//
 
-    // Insert HTML for title, content, and buttons
-    postDiv.innerHTML =
-      '<h3>' + post.title + '</h3>' +
-      '<p>' + post.content + '</p>' +
-      '<div class="controls">' +
-      '<button class="btn-edit" data-action="edit">Edit</button>' +
-      '<button class="btn-delete" data-action="delete">Delete</button>' +
-      '</div>';
+    // Loop through all posts in the array
+    // - 'let i = 0' starts at the first item (index 0)
+    // - 'i < posts.length' continues until the last item
+    // - 'i++' moves to the next item each time
+    // - 'const post = posts[i]' gets the current post in this loop
 
-    // Append the post div to the container
-    postsContainer.appendChild(postDiv);
+    // "Create Post" container div 
+  const postDiv = document.createElement('div');   
+    postDiv.classList.add('post');                    
+    postDiv.setAttribute('data-id', post.id);        
+
+    // create title element
+    const titleEl = document.createElement('h3');    
+    titleEl.textContent = post.title;               
+    postDiv.appendChild(titleEl);
+
+    // create content element
+    const contentEl = document.createElement('p');
+    contentEl.textContent = post.content;
+    postDiv.appendChild(contentEl);
+
+    // create controls container
+    const controlsDiv = document.createElement('div');
+    controlsDiv.classList.add('controls');
+
+    // edit button
+    const editBtn = document.createElement('button');
+    editBtn.textContent = 'Edit';
+    editBtn.classList.add('btn-edit');
+    editBtn.setAttribute('data-action', 'edit');  
+    controlsDiv.appendChild(editBtn);
+
+    // delete button
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.classList.add('btn-delete');
+    deleteBtn.setAttribute('data-action', 'delete');
+    controlsDiv.appendChild(deleteBtn);
+
+    postDiv.appendChild(controlsDiv); // append buttons container
+    postsContainer.appendChild(postDiv); // append post to main container
   }
+   
 }
 
 /* --------------------------

@@ -14,7 +14,7 @@ Delete posts from the page.
 
 Persist posts in the browser using Local Storage, so all entries remain after page reloads.
 
-The project emphasizes beginner-friendly coding concepts taught in the Per-Scholas curriculum (Lessons 1–5), such as:
+Coding concepts shown :
 
 DOM element selection
 
@@ -107,4 +107,9 @@ W3Schools
 
 Per-Scholas Software Engineering Curriculum (Lessons 1–5)
 
+Google search for concepts and code
+
 ReadMe Template Inspiration – DomPizzie Gist
+
+emojis inspo: https://towardsdev.com/how-to-add-emojis-to-your-github-readme-and-other-markdown-files-c8f13b3f9de4
+
